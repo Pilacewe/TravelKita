@@ -1,0 +1,365 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.hero {
+  position: relative;
+  background-image: url('https://res.cloudinary.com/djhlxfuzs/image/upload/v1718529373/mountain-2603830_1280_fjhuuy.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  height: 450px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  border-radius: 10px;
+  z-index: 1; /* Ensure the overlay is above the image but below the text */
+}
+
+.hero h2 {
+  position: relative;
+  z-index: 2; /* Ensure the text is above the overlay */
+  font-size: 3em;
+  font-weight: bold;
+}
+
+/* Other CSS styles */
+.intro {
+  text-align: center;
+  margin: 100px 0;
+  padding: 20px;
+}
+
+.intro h2 {
+  margin: 0;
+  color: #14a0cf; /* Light blue color */
+}
+
+/* Best Experience */
+
+.cd-btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375em;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: 0.2s;
+    will-change: transform;
+  }
+  
+  .cd-btn:focus-visible {
+    outline: none;
+  }
+  
+  .cd-btn:active {
+    transform: translateY(2px);
+  }
+  
+  .cd-btn--primary {
+    background: hsl(250, 84%, 54%);
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+                0 1px 3px hsla(250, 84%, 38%, 0.25), 
+                0 2px 6px hsla(250, 84%, 38%, 0.1), 
+                0 6px 10px -2px hsla(250, 84%, 38%, 0.25);
+    color: hsl(0, 0%, 100%);
+  }
+  
+  .cd-btn--primary:hover {
+    background: hsl(0, 0%, 85%);
+    color: hsl(250, 84%, 54%);
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+                0 1px 2px hsla(250, 84%, 38%, 0.25), 
+                0 1px 4px hsla(250, 84%, 38%, 0.1), 
+                0 3px 6px -2px hsla(250, 84%, 38%, 0.25);
+  }
+  
+  .cd-btn--primary:focus-visible {
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15), 
+                0 1px 2px hsla(250, 84%, 38%, 0.25), 
+                0 1px 4px hsla(250, 84%, 38%, 0.1), 
+                0 3px 6px -2px hsla(250, 84%, 38%, 0.25), 
+                0 0 0 2px hsl(0, 0%, 100%), 
+                0 0 0 4px hsl(250, 84%, 54%);
+  }
+  /* --------------------------------
+  
+  Component 
+  
+  -------------------------------- */
+  
+  .feature-v2 {}
+  
+  .feature-v2__label {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.9375rem;
+    color: hsl(240, 4%, 65%);
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+  }
+  
+  .feature-v2__label::after {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background-color: hsla(230, 13%, 9%, 0.1);
+  }
+  
+  .feature-v2__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  .feature-v2__grid > * {
+    min-width: 0;
+    grid-column-end: span 12;
+  }
+  
+  .feature-v2__content {
+    line-height: 1.6;
+  }
+  
+  .feature-v2__content > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 64rem) {
+    .feature-v2__label {
+      margin-bottom: 2rem;
+    }
+  
+    .feature-v2__grid {
+      gap: 0;
+    }
+  
+    .feature-v2__grid-item-1 {
+      grid-column-end: span 4;
+    }
+  
+    .feature-v2__grid-item-2 {
+      grid-column-start: 6;
+      grid-column-end: span 7;
+    }
+  }
+  
+  /* -------------------------------- 
+  
+  Utilities 
+  
+  -------------------------------- */
+  
+  .cd-container {
+    width: calc(100% - 3rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cd-max-width-adaptive-lg {
+    max-width: 32rem;
+  }
+  
+  @media (min-width: 48rem) {
+    .cd-max-width-adaptive-lg {
+      max-width: 48rem;
+    }
+  }
+  
+  @media (min-width: 64rem) {
+    .cd-max-width-adaptive-lg {
+      max-width: 64rem;
+    }
+  }
+  
+  @media (min-width: 80rem) {
+    .cd-max-width-adaptive-lg {
+      max-width: 80rem;
+    }
+  }
+  
+  .cd-position-relative {
+    position: relative;
+  }
+  
+  .cd-z-index-1 {
+    z-index: 1;
+  }
+  
+  .cd-margin-y-2xl {
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+  }
+
+/* Bagian Our Service */
+.our-service {
+    background: url('https://res.cloudinary.com/djhlxfuzs/image/upload/v1718379219/Screenshot_2024-06-14_223303_guifed.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    padding: 30px 20px 100px;
+    color: #333;
+    margin-bottom: 350px; /* Tambahkan margin bawah */
+}
+
+.our-service::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.our-service .container {
+    position: relative;
+    z-index: 2;
+    padding-top: 0px;
+}
+
+.our-service h2 {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-bottom: 130px;
+    margin-top: 0;
+    padding-top: 20px;
+    font-size: 2em;
+}
+
+.plane {
+    position: absolute;
+    top: 130%;
+    left: 19%;
+    transform: translate(-50%, -50%) rotate(33deg);
+    width: 850px; 
+    z-index: 3;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.service {
+    text-align: center;
+    width: 150px;
+}
+
+.service img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* content destination */
+
+
+.container {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.box {
+    position: relative;
+    width: 30%;
+    padding: 20px;
+    margin: 0 10px;
+    text-align: left;
+    background: transparent;
+    box-shadow: none;
+}
+
+.box img {
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.box-large img {
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Kelas khusus untuk box di tengah */
+.center-box img {
+    width: 90%;
+    height: 542px;
+    margin-top: -40px; /* Menggeser gambar ke atas dengan margin negatif */
+}
+
+
+.box h3, .box p, .box a {
+    margin: 15px 0;
+    color: #333;
+}
+
+.box h3 {
+    font-size: 1.5em;
+}
+
+.box p {
+    font-size: 14px;
+}
+
+.box a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+
+.social {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+}
+
+.social img {
+    margin: 0 10px;
+    width: 20px;
+    vertical-align: middle;
+    border-radius: 20px;
+}
